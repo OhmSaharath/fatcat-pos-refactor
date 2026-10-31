@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: fatcat-pos-refactor
+    runtime: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: STORE_ACTIVE
+        sync: false
+      - key: LOYVERSE_TOKEN
+        sync: false
+      - key: LOYVERSE_STORE_ID
+        sync: false
+      - key: LOYVERSE_POS_DEVICE_ID
+        sync: false
+      - key: LOYVERSE_EMPLOYEE_ID
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_HMAC_SECRET
+        sync: false
+      - key: PROMPTPAY_ID
+        sync: false
+      - key: PROMPTPAY_NAME
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: LINE_LIFF_ID
+        sync: false
+      - key: LINE_CHANNEL_TOKEN
+        sync: false
+      - key: LINE_TARGET_ID
+        sync: false

@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    font-family: 'Inter', 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   Animated Emoji Keyframes (GPU Accelerated with transform & filter drop-shadow)
+   ========================================================================== */
+
+/* 1. Flame Animation (Flickering, swaying, fire warmth glow) */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-3deg);
+    filter: drop-shadow(0 0 2px rgba(249, 115, 22, 0.7));
+  }
+  20% {
+    transform: scale(1.15) rotate(4deg) translateY(-1.5px);
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 2px rgba(251, 191, 36, 0.9));
+  }
+  40% {
+    transform: scale(0.96) rotate(-2deg);
+    filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.7));
+  }
+  60% {
+    transform: scale(1.2) rotate(3deg) translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 1)) drop-shadow(0 0 4px rgba(252, 211, 77, 0.95));
+  }
+  80% {
+    transform: scale(1.06) rotate(-4deg) translateY(-0.5px);
+    filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.8));
+  }
+}
+
+.animate-flame {
+  display: inline-block;
+  transform-origin: bottom center;
+  animation: flameFlicker 1.4s infinite ease-in-out;
+  will-change: transform, filter;
+}
+
+/* 2. Trophy Animation (Gold Shimmer, Sparkle, Tilted Floating Glow) */
+@keyframes trophyShimmer {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.6));
+  }
+  25% {
+    transform: scale(1.16) rotate(-6deg) translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.95)) drop-shadow(0 0 3px rgba(253, 224, 71, 1));
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 3px rgba(234, 179, 8, 0.7));
+  }
+  75% {
+    transform: scale(1.2) rotate(6deg) translateY(-2px);
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 1)) drop-shadow(0 0 4px rgba(254, 240, 138, 1));
+  }
+}
+
+.animate-trophy {
+  display: inline-block;
+  transform-origin: center center;
+  animation: trophyShimmer 2.2s infinite ease-in-out;
+  will-change: transform, filter;
+}
+
+/* 3. Sparkle / Star Animation */
+@keyframes sparkleGlow {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 1px rgba(251, 191, 36, 0.5));
+  }
+  50% {
+    transform: scale(1.22) rotate(18deg);
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 1));
+  }
+}
+
+.animate-sparkle {
+  display: inline-block;
+  transform-origin: center center;
+  animation: sparkleGlow 1.8s infinite ease-in-out;
+  will-change: transform, filter;
+}
